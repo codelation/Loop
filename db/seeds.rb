@@ -6,18 +6,18 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-client = Client.create({
-          name: "Josh",
-          company_name: "Codelation",
-          email_address: "fake@codelation.com"
-         })
+Client.create({
+  name: "Josh",
+  company_name: "Codelation",
+  email_address: "fake@codelation.com"
+})
 
-project = Project.create({
-           name: "Loop",
-           description: "A delightful app for closing that loop!"
-          })
+Project.create({
+  name: "Loop",
+  description: "A delightful app for closing that loop!"
+})
 
-deliverables = Deliverable.create([
+Deliverable.create([
   { name: "List, Add, and Edit Client",
     description: "User needs to be able to list all clients, as well as add new and edit existing clients",
     project_id: 1 },
@@ -32,7 +32,7 @@ deliverables = Deliverable.create([
     project_id: 1 }
 ])
 
-issues = Issue.create([
+Issue.create([
   { title: "Create Client Index View/controllers",
     body: "Create index controller, create index view, add client to routes",
     budgeted_time: 30,
