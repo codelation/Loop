@@ -1,0 +1,10 @@
+<h2>Edit Information for <%= @client.name %></h2>
+
+<fieldset>
+	<%= form_for @client do |f| %>
+		Name: <%= f.text_field :name %><br>
+		Company Name: <%= f.text_field :company_name %><br>
+    Email: <%= f.text_field :email_address %><br>
+		<%= f.submit "Save Client" %>
+	<% end %>
+</fieldset>
