@@ -30,7 +30,7 @@ class ClientsController < ApplicationController
     if @client.update(client_params)
       redirect_to @client, notice: "Client was successfully updated. Thank you!"
     else
-      render :new, alert: "Client was not updated"
+      render :edit, alert: "Client was not updated"
     end
   end
 
