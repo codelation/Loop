@@ -2,56 +2,125 @@
 
 ## Requirements
 
-If you've manage to generate the app, all you
-should need is [Postgres.app](http://postgresapp.com).
+These are the most basic features and specs for the project.
 
-## Running Locally
+### Clients
 
-A rake command is included to start up Postgres.app
-if it isn't running already and then start the Rails
-app with Puma at <http://localhost:3000>.
+Attributes:
 
-```bash
-$ rake start
-```
+- Name
+- Company name
+- Email address
+- Has many projects
 
-## Deployment
+Features:
 
-This app is made to be deployed to [Heroku](http://heroku.com)
-and should work out of the box as long as the environment variables
-from `.env` are set on Heroku using `heroku config:set VARIABLE_NAME=VALUE`.
+1. [ ] List all clients
+2. [ ] Create new clients
+3. [ ] Edit existing clients
+4. [ ] List projects for each client
 
-## Installed Gems
+### Projects
 
-### Production/Development/Test
+Attributes:
 
-- [Awesome Print](https://github.com/michaeldv/awesome_print)
-- [Bourbon](http://bourbon.io)
-- [Coffee-Rails](https://github.com/rails/coffee-rails)
-- [ember-rails](https://github.com/emberjs/ember-rails)
-- [jquery-rails](https://github.com/rails/jquery-rails)
-- [New Relic Ruby Agent](https://github.com/newrelic/rpm)
-- [pg](https://bitbucket.org/ged/ruby-pg)
-- [Puma](http://puma.io)
-- [Roadie](https://github.com/Mange/roadie)
-- [Sass-Rails](https://github.com/rails/sass-rails)
-- [Uglifier](https://github.com/lautis/uglifier)
+- Name
+- Description
+- Belongs to client
+- Has many deliverables
 
-### Development/Test
+Features:
 
-- [Better Errors](https://github.com/charliesome/better_errors)
-- [dotenv](https://github.com/bkeepers/dotenv)
-- [Foreman](https://github.com/ddollar/foreman)
-- [Letter Opener](https://github.com/fgrehm/letter_opener_web)
-- [Quiet Assets](https://github.com/evrone/quiet_assets)
+1. [ ] List projects for a client (Same as Clients #4)
+2. [ ] Create new projects
+3. [ ] Edit existing projects
+4. [ ] List deliverables for each project
 
-### Test
+### Deliverables
 
-- [factory_girl](https://github.com/thoughtbot/factory_girl_rails)
-- [Faker](https://github.com/stympy/faker)
-- [Guard::RSpec](https://github.com/guard/guard-rspec)
-- [rb-fsevent](https://github.com/thibaudgg/rb-fsevent)
-- [rspec-rails](https://github.com/rspec/rspec-rails)
-- [TerminalNotifier for Guard](https://github.com/Springest/terminal-notifier-guard)
-- [VCR](https://github.com/vcr/vcr)
-- [WebMock](https://github.com/bblimke/webmock)
+Attributes:
+
+- Name
+- Description
+- Belongs to project
+- Has many issues
+
+Features:
+
+1. [ ] List deliverables for a project (Same as Projects #4)
+2. [ ] Create new deliverable
+3. [ ] Edit existing deliverables
+4. [ ] List issues for each deliverable
+
+### Issues
+
+Attributes:
+
+- Title
+- Body
+- Budgeted time
+- Priority
+- Belongs to deliverable
+
+Features:
+
+1. [ ] List issues for a deliverable (Same as Deliverables #4)
+2. [ ] Create new issues
+3. [ ] Edit existing issues
+
+## Features
+
+These are features that will make the app stand out
+as being more useful than simply using a spreadsheet.
+
+The features are listed in order of importance to the client.
+
+### 1. Drag and drop sorting
+
+Use JavaScript to create an interface for sorting issues
+to change the priority of the issues in a project.
+
+### 2. Autocomplete
+
+The client would like to be able to easily jump to 
+any client, project, or issue by using an autocomplete
+search field for each model.
+
+Nothing fancy is needed as far as full text search.
+A simple `LIKE` query is just fine.
+
+Each autocomplete search field should pull from
+matches to the following fields:
+
+#### Clients
+
+- Name
+- Company name
+- Email address
+
+#### Projects
+
+- Name
+
+#### Issues
+
+- Title
+- Body
+
+#### BONUS
+
+An autocomplete search that pulls in matches from all
+models and groups them in the search results.
+
+### 3. Authentication
+
+Require the email address and password from an admin
+user to manage clients, projects, etc.
+
+Give clients user accounts so they can log in and
+view their projects and issues.
+
+#### BONUS
+
+Use CanCan to lock down all look ups and actions to  
+only the records that should be accessible to the user.
