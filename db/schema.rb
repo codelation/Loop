@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140818155933) do
   end
 
   create_table "deliverables", force: true do |t|
+    t.integer  "project_id"
     t.string   "name"
     t.text     "description"
     t.datetime "created_at"
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 20140818155933) do
   end
 
   create_table "issues", force: true do |t|
+    t.integer  "deliverable_id"
     t.string   "title"
     t.text     "body"
     t.integer  "budgeted_time"
