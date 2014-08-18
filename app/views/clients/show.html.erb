@@ -1,0 +1,9 @@
+<h2><%= @client.name %>'s Information</h2>
+
+<%= @client.name %><br>
+<%= @client.company_name %><br>
+<%= @client.email_address %>
+
+<% @client.projects.each do |project| %>
+  <%= project.name %>
+<% end %>
