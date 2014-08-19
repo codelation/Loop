@@ -1,0 +1,12 @@
+<h2>Your Current Issues</h2>
+
+<table>
+  <% @issues.each do |issue| %>
+    <tr>
+      <td><%= issue.title %></td>
+      <td><%= issue.budgeted_time %></td>
+      <td><%= button_to "Edit", edit_issue_path(issue) %></td>
+      <td><%= button_to "Delete", issue_path(issue), method: "delete" %></td>
+    </tr>
+  <% end %>
+</table>

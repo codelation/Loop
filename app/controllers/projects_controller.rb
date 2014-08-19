@@ -9,12 +9,12 @@ class ProjectsController < ApplicationController
   def new
     @title = "New Project"
     @project = Project.new
-    @clients = Client.all
   end
 
   def edit
     @title = "Edit Project"
   end
+
   def create
     @project = Project.new(project_params)
 

@@ -1,0 +1,11 @@
+<h2>Edit Information for <%= @issue.title %></h2>
+
+<fieldset>
+	<%= form_for @issue do |f| %>
+    Associated Deliverable: <%= f.select(:deliverable_id, Deliverable.all.map{|c| [c.name, c.id]}, prompt: "select a deliverable") %><br>
+		Title: <%= f.text_field :title %><br>
+		Describe the Issue: <%= f.text_area :body %><br>
+    Allotted Time: <%= f.text_field :budgeted_time %><br>
+		<%= f.submit "Save issue" %>
+	<% end %>
+</fieldset>
