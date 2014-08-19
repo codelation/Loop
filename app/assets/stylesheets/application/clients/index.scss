@@ -1,8 +1,13 @@
 @import "imports";
 
 body.clients.index main {
+  h2 {
+    padding: 10px 20px;
+  }
+
   table, tr, td {
     border: 1px solid #0A2A12;
+    margin: 20px;
 
     tr, td {
       padding: 10px;
