@@ -1,9 +1,8 @@
-<h2><%= @client.name %>'s Information</h2>
+<h2><%= @project.name %>'s Information</h2>
 
-<%= @client.name %><br>
-<%= @client.company_name %><br>
-<%= @client.email_address %>
+<%= @project.name %><br>
+<%= @project.description %><br>
 
-<% @client.projects.each do |project| %>
-  <%= project.name %>
+<% @project.deliverables.each do |deliverable| %>
+  <%= deliverable.name %>
 <% end %>

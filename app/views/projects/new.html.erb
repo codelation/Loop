@@ -1,10 +1,11 @@
-<h2>Add a New Client</h2>
+<h2>Add a New Project</h2>
 
 <fieldset>
-	<%= form_for @client do |f| %>
+	<%= form_for @project do |f| %>
+    <p>Which client is this project for?</p>
+    <%= f.select(:client_id, Client.all.map{|c| [c.name, c.id]}, prompt: "select a client") %><br>
 		Name: <%= f.text_field :name %><br>
-		Company Name: <%= f.text_field :company_name %><br>
-    Email: <%= f.text_field :email_address %><br>
-		<%= f.submit "Save Client" %>
+		Description: <%= f.text_area :description %><br>
+		<%= f.submit "Save Project" %>
 	<% end %>
 </fieldset>

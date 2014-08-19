@@ -1,12 +1,11 @@
-<h2>Your Current Clients</h2>
+<h2>Your Current Projects</h2>
 
 <table>
-  <% @clients.each do |client| %>
+  <% @projects.each do |project| %>
     <tr>
-      <td><%= client.name %></td>
-      <td><%= client.company_name %></td>
-      <td><%= button_to "Edit", edit_client_path(client) %></td>
-      <td><%= button_to "Delete", client_path(client), method: "delete" %></td>
+      <td><%= project.name %></td>
+      <td><%= button_to "Edit", edit_project_path(project) %></td>
+      <td><%= button_to "Delete", project_path(project), method: "delete" %></td>
     </tr>
   <% end %>
 </table>
