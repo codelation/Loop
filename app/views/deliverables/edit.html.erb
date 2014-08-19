@@ -1,0 +1,9 @@
+<h2>Edit <%= @deliverable.name %> Information</h2>
+
+<fieldset>
+	<%= form_for @deliverable do |f| %>
+		Name: <%= f.text_field :name %><br>
+		Description: <%= f.text_field :description %><br>
+		<%= f.submit "Save Deliverable" %>
+	<% end %>
+</fieldset>

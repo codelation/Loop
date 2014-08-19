@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:destroy, :edit, :show, :update]
+  before_action :set_project, only: [:edit, :show, :update]
 
   def index
     @title = "Projects"
@@ -15,11 +15,6 @@ class ProjectsController < ApplicationController
   def edit
     @title = "Edit Project"
   end
-
-  def show
-    @title = @project.name
-  end
-
   def create
     @project = Project.new(project_params)
 
@@ -39,10 +34,15 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    @project = Project.find_by_id(params[:id])
     if @project
       @project.destroy
     end
-    redirect_to project_path
+    redirect_to projects_path
+  end
+
+  def show
+    @title = @project.name
   end
 
   private
@@ -52,7 +52,7 @@ class ProjectsController < ApplicationController
   end
 
   def set_project
-    @project = Project.find(params[:id])
+    @project = Project.find_by_id(params[:id])
   end
 
 end

@@ -1,0 +1,11 @@
+<h2>Your Current Projects</h2>
+
+<table>
+  <% @deliverables.each do |deliverable| %>
+    <tr>
+      <td><%= deliverable.name %></td>
+      <td><%= button_to "Edit", edit_deliverable_path(deliverable) %></td>
+      <td><%= button_to "Delete", deliverable_path(deliverable), method: "delete" %></td>
+    </tr>
+  <% end %>
+</table>

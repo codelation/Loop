@@ -1,0 +1,8 @@
+<h2><%= @deliverable.name %>'s Information</h2>
+
+<%= @deliverable.name %><br>
+<%= @deliverable.description %><br>
+
+<% @deliverable.issues.each do |issue| %>
+  <%= issue.title %>
+<% end %>

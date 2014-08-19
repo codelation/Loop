@@ -2,7 +2,7 @@ class DeliverablesController < ApplicationController
 
   def index
     @title = "Deliverables"
-    @deliverable = Deliverable.first
+    @deliverables = Deliverable.all
   end
 
   def new
@@ -39,7 +39,7 @@ class DeliverablesController < ApplicationController
     if @deliverable
       @deliverable.destroy
     end
-    redirect_to deliverable_path
+    redirect_to deliverables_path
   end
 
   def show
