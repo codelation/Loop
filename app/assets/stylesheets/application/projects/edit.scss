@@ -1,0 +1,15 @@
+@import "imports";
+
+body.projects.edit main {
+  @include outer-container;
+
+  h2 {
+    padding: 10px 20px;
+  }
+
+  .edit-form {
+    margin: 20px;
+    padding: 10px 20px;
+  }
+
+}

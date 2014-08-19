@@ -1,6 +1,6 @@
 <h2>Add a New Project</h2>
 
-<fieldset>
+<fieldset class="new-form">
 	<%= form_for @project do |f| %>
     <p>Which client is this project for?</p>
     <%= f.select(:client_id, Client.all.map{|c| [c.name, c.id]}, prompt: "select a client") %><br>

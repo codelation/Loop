@@ -1,9 +1,11 @@
 <h2>Your Current Projects</h2>
 
+<div class="new-link"><%= link_to "Add a New Project", new_project_path %></div>
+
 <table>
   <% @projects.each do |project| %>
     <tr>
-      <td><%= project.name %></td>
+      <td><%= link_to project.name, project_path(project) %></td>
       <td><%= button_to "Edit", edit_project_path(project) %></td>
       <td><%= button_to "Delete", project_path(project), method: "delete" %></td>
     </tr>

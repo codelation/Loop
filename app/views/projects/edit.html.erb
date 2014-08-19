@@ -1,7 +1,9 @@
 <h2>Edit <%= @project.name %> Information</h2>
 
-<fieldset>
+<fieldset class="edit-form">
 	<%= form_for @project do |f| %>
+    <p>Which client is this project for?</p>
+    <%= f.select(:client_id, Client.all.map{|c| [c.name, c.id]}, prompt: "select a client") %><br>
 		Name: <%= f.text_field :name %><br>
 		Description: <%= f.text_field :description %><br>
 		<%= f.submit "Save Project" %>

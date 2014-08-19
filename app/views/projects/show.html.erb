@@ -1,8 +1,18 @@
 <h2><%= @project.name %>'s Information</h2>
 
-<%= @project.name %><br>
-<%= @project.description %><br>
+<div class="project-info">
+  <%= @project.name %><br>
+  <%= @project.description %><br>
+</div>
 
-<% @project.deliverables.each do |deliverable| %>
-  <%= deliverable.name %>
-<% end %>
+<div class="project-deliverables">
+  <fieldset>
+    <legend><%= @project.name %>'s deliverables</legend>
+    <ul>
+      <% @project.deliverables.each do |deliverable| %>
+        <li><%= link_to deliverable.name, deliverable_path(deliverable) %></li>
+      <% end %>
+    </ul>
+  </fieldset>
+</div>
+

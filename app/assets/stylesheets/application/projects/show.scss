@@ -1,0 +1,19 @@
+@import "imports";
+
+body.projects.show main {
+  @include outer-container;
+  margin: 20px;
+
+  h2 {
+    padding: 10px 20px;
+  }
+
+  .project-info {
+    @include span-columns(4);
+  }
+
+  .project-deliverables {
+    @include span-columns(8);
+    @include omega;
+  }
+}
