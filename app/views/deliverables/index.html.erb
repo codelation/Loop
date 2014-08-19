@@ -1,9 +1,11 @@
 <h2>Your Current Projects</h2>
 
+<div class="new-link"><%= link_to "Add a New Deliverable", new_deliverable_path %></div>
+
 <table>
   <% @deliverables.each do |deliverable| %>
     <tr>
-      <td><%= deliverable.name %></td>
+      <td><%= link_to deliverable.name, deliverable_path(deliverable) %></td>
       <td><%= button_to "Edit", edit_deliverable_path(deliverable) %></td>
       <td><%= button_to "Delete", deliverable_path(deliverable), method: "delete" %></td>
     </tr>

@@ -1,7 +1,9 @@
 <h2>Edit <%= @deliverable.name %> Information</h2>
 
-<fieldset>
+<fieldset class="edit-form">
 	<%= form_for @deliverable do |f| %>
+    <p>Which project is this deliverable for?</p>
+    <%= f.select(:project_id, Project.all.map{|c| [c.name, c.id]}, prompt: "select a project") %><br>
 		Name: <%= f.text_field :name %><br>
 		Description: <%= f.text_field :description %><br>
 		<%= f.submit "Save Deliverable" %>

@@ -1,8 +1,19 @@
 <h2><%= @deliverable.name %>'s Information</h2>
 
-<%= @deliverable.name %><br>
-<%= @deliverable.description %><br>
+<div class="deliverable-info">
+  <%= @deliverable.name %><br>
+  <%= @deliverable.description %><br>
+</div>
 
-<% @deliverable.issues.each do |issue| %>
-  <%= issue.title %>
-<% end %>
+<div class="client-projects">
+  <fieldset>
+    <legend><%= @deliverable.name %>'s issues</legend>
+    <ul>
+      <% @deliverable.issues.each do |issue| %>
+        <li><%= link_to issue.title, issue_path(issue) %></li>
+      <% end %>
+    </ul>
+  </fieldset>
+</div>
+
+

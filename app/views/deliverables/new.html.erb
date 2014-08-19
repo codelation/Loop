@@ -1,9 +1,9 @@
 <h2>Add a New Deliverable</h2>
 
-<fieldset>
+<fieldset class="new-form">
 	<%= form_for @deliverable do |f| %>
     <p>Which project is this deliverable for?</p>
-    <%= f.select(:project_id, Project.all.map{|c| [c.name, c.id]}, prompt: "select a Project") %><br>
+    <%= f.select(:project_id, Project.all.map{|c| [c.name, c.id]}, prompt: "select a project") %><br>
 		Name: <%= f.text_field :name %><br>
 		Description: <%= f.text_area :description %><br>
 		<%= f.submit "Save Deliverable" %>
