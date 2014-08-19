@@ -1,6 +1,6 @@
 <h2>Add a New Issue</h2>
 
-<fieldset>
+<fieldset class="new-form">
 	<%= form_for @issue do |f| %>
     Associated Deliverable: <%= f.select(:deliverable_id, Deliverable.all.map{|c| [c.name, c.id]}, prompt: "select a deliverable") %><br>
 		Title: <%= f.text_field :title %><br>

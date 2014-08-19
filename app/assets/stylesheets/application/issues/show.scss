@@ -1,0 +1,14 @@
+@import "imports";
+
+body.issues.show main {
+  @include outer-container;
+  margin: 20px;
+
+  h2 {
+    padding: 10px 20px;
+  }
+
+  .issue-info {
+    padding: 20px;
+  }
+}
