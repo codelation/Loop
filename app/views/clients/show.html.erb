@@ -1,9 +1,19 @@
 <h2><%= @client.name %>'s Information</h2>
 
-<%= @client.name %><br>
-<%= @client.company_name %><br>
-<%= @client.email_address %>
+<div class="client-info">
+  <%= @client.name %><br>
+  <%= @client.company_name %><br>
+  <%= @client.email_address %>
+</div>
 
-<% @client.projects.each do |project| %>
-  <%= project.name %>
-<% end %>
+<div class="client-projects">
+  <fieldset>
+    <legend><%= @client.name %>'s Projects'</legend>
+    <ul>
+      <% @client.projects.each do |project| %>
+        <li><%= link_to project.name, project_path(project) %></li>
+      <% end %>
+    </ul>
+  </fieldset>
+</div>
+

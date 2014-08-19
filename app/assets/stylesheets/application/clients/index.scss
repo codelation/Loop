@@ -1,8 +1,15 @@
 @import "imports";
 
 body.clients.index main {
+  @include outer-container;
+
   h2 {
     padding: 10px 20px;
+  }
+
+  .new-link {
+    padding: 10px 20px;
+    text-decoration: none;
   }
 
   table, tr, td {
