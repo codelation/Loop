@@ -2,7 +2,7 @@ class DeliverablesController < ApplicationController
 
   def index
     @title = "Deliverables"
-    @deliverables = Deliverable.all
+    @projects = Project.all
   end
 
   def new

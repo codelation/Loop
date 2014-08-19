@@ -2,12 +2,19 @@
 
 <div class="new-link"><%= link_to "Add a New Project", new_project_path %></div>
 
-<table>
-  <% @projects.each do |project| %>
-    <tr>
-      <td><%= link_to project.name, project_path(project) %></td>
-      <td><%= button_to "Edit", edit_project_path(project) %></td>
-      <td><%= button_to "Delete", project_path(project), method: "delete" %></td>
-    </tr>
-  <% end %>
-</table>
+
+<% @clients.each do |client| %>
+  <fieldset class="projects">
+    <legend><%= client.name %>, <%= client.company_name %></legend>
+    <table>
+      <% client.projects.each do |project| %>
+        <tr>
+          <td><%= link_to project.name, project_path(project) %></td>
+          <td><%= button_to "Edit", edit_project_path(project) %></td>
+          <td><%= button_to "Delete", project_path(project), method: "delete" %></td>
+        </tr>
+      <% end %>
+    </table>
+  </fieldset>
+<% end %>
+

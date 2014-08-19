@@ -2,6 +2,8 @@
 
 body.clients.index main {
   @include outer-container;
+  max-width: 960px;
+  padding: 20px;
 
   h2 {
     padding: 10px 20px;
@@ -15,6 +17,7 @@ body.clients.index main {
   table, tr, td {
     border: 1px solid #0A2A12;
     margin: 20px;
+    width: 100%;
 
     tr, td {
       padding: 10px;

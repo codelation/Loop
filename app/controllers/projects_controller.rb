@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 
   def index
     @title = "Projects"
-    @projects = Project.all
+    @clients = Client.all
   end
 
   def new

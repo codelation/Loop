@@ -7,6 +7,10 @@ body.projects.index main {
     padding: 10px 20px;
   }
 
+  .projects {
+    margin: 20px;
+  }
+
   .new-link {
     padding: 10px 20px;
     text-decoration: none;
@@ -15,6 +19,7 @@ body.projects.index main {
   table, tr, td {
     border: 1px solid #0A2A12;
     margin: 20px;
+    width: 100%;
 
     tr, td {
       padding: 10px;

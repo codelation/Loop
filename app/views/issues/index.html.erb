@@ -2,13 +2,19 @@
 
 <div class="new-link"><%= link_to "Add a New Issue", new_issue_path %></div>
 
-<table>
-  <% @issues.each do |issue| %>
-    <tr>
-      <td><%= link_to issue.title, issue_path(issue) %></td>
-      <td><%= issue.budgeted_time %></td>
-      <td><%= button_to "Edit", edit_issue_path(issue) %></td>
-      <td><%= button_to "Delete", issue_path(issue), method: "delete" %></td>
-    </tr>
-  <% end %>
-</table>
+<% @deliverables.each do |deliverable|%>
+  <fieldset class="issues">
+    <legend><%= deliverable.name %></legend>
+    <table>
+      <% deliverable.issues.each do |issue| %>
+        <tr>
+          <td><%= link_to issue.title, issue_path(issue) %></td>
+          <td><%= issue.budgeted_time %></td>
+          <td><%= button_to "Edit", edit_issue_path(issue) %></td>
+          <td><%= button_to "Delete", issue_path(issue), method: "delete" %></td>
+        </tr>
+      <% end %>
+    </table>
+  </fieldset>
+<% end %>
+
